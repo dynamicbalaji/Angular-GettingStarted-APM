@@ -10,6 +10,14 @@ import { Component } from '@angular/core';
   selector: 'pm-root',
   //Template - Start
   //Inline Template - Single line can be given in double quotes ("") but multiple lines should be given in backtick (``)
+  //Binding - Coordinates communication between the component's class & its template & often involves passing data
+  //Binding syntax is always defined in the template
+  //{{}} - Interpolation/Template Expression - One way binding from class property to template so the value can shows up here
+  //Interpolation can be used in many operations like given below
+  //  concatenation - {{'Title: ' + pageTitle}}
+  //  calcuations - {{2*20+1}}
+  //  call class methods - {{'Title: ' + getTitle()}}
+  //  element property assignments - <h1 innerText={{pageTitle}}></h1>
   template: `
     <div><h1>{{pageTitle}}</h1>
         <pm-products></pm-products>
