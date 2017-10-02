@@ -33,3 +33,4 @@ Check comments in below files
 - app.component.ts to understand more about component
 - index.html to understand about the need of this file
 - app.module.ts to understand more about module
+- product-list.component.html to understand *ngFor & property binding

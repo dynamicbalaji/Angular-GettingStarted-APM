@@ -38,8 +38,22 @@
                         for..of - iterates over objects, such as an array
                         for..in - iterates over properties of an object ('in' iterating the 'in'dex)
                     -->
-                    <tr *ngFor="let product for products">
-                        <td></td>
+                    <tr *ngFor="let product of products">
+                        <td>
+                            <!--
+                                Property Binding
+                                    <img [src]='product.imageUrl'/>    
+                                        [] - Binding Target & '' - Binding Source
+                                Interpolation
+                                    <img src={{product.imageUrl}}/>
+                                Property binding is preferred over Interpolation unless there is some complex logic like below is needed
+                                    <img src='http://openclipart.org/{{product.imageUrl}}'/>
+                            -->
+                            <img [src]='product.imageUrl'
+                                 [title]='product.productName'
+                                 [style.width.px]='imageWidth'
+                                 [style.margin.px]='imageMargin'/>
+                        </td>
                         <td>{{product.productName}}</td>
                         <td>{{product.productCode}}</td>
                         <td>{{product.releaseDate}}</td>
