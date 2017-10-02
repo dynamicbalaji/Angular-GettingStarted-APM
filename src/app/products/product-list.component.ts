@@ -3,7 +3,12 @@ import { IProduct } from "./product";
 
 @Component({
     selector: 'pm-products',
-    templateUrl: './product-list.component.html'
+    templateUrl: './product-list.component.html',
+    //Encapsulating component styles - Start
+    //Both styles & styleUrls properties are array, so we can add multiple seperated by commas
+    //styles: ['thead {color:#337AB7}']
+    styleUrls: ['./product-list.component.css']
+    //Encapsulating component styles - End
 })
 
 /*
