@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IProduct } from "./product";
 
 @Component({
@@ -16,17 +16,20 @@ import { IProduct } from "./product";
         Strong typing & interfaces
         Encapsulating styles
         Lifecycle hooks
+            OnInit - Perform component initiazliation, retrieve data
+            OnChanges - Perform action after change to input properties
+            OnDestroy - Perform cleanup
         Custom pipes
         Nested components
 */
 
-export class ProductListComponent{
+export class ProductListComponent implements OnInit{
     pageTitle: string = 'Product List';
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
     listFilter: string = 'cart';
-    //TypeScript
+    //TypeScript allows 'any' datatype
     //products: any[] = [
     products: IProduct[] = [
         {
@@ -83,5 +86,10 @@ export class ProductListComponent{
 
     toggleImage(): void {
         this.showImage = !this.showImage;
+    }
+
+    //ngOnInit is a method in OnInit interface that needs to be implemented here
+    ngOnInit(): void {
+        console.log('In OnInit');
     }
 }
