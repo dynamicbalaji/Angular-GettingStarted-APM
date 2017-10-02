@@ -32,3 +32,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Check comments in below files
 - app.component.ts to understand more about component
 - index.html to understand about the need of this file
+- app.module.ts to understand more about module
