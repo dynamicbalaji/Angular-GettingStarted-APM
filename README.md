@@ -34,3 +34,5 @@ Check comments in below files
 - index.html to understand about the need of this file
 - app.module.ts to understand more about module
 - product-list.component.html to understand *ngFor,  property binding, event binding & two-way binding
+- product-list.component.ts to understand how to improve components
+- product.ts to understand interface & class
