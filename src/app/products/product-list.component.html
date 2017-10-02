@@ -8,12 +8,20 @@
                 Filter By
             </div>
             <div class="col-md-4">
-                <input type="text"/>
+                <!--
+                    Two-way Binding
+                        ngModel directive
+                            [] - property binding from class property to input element
+                            () - event binding to send a notification of the user-entered data back to the class property
+                        Tip - Visualize a 'Banana in a Box' - [()]
+                -->
+                <input type="text"
+                        [(ngModel)]='listFilter'/>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h3>Filtered By</h3>
+                <h3>Filtered By: {{listFilter}}</h3>
             </div>
         </div>
         <div class="table-responsive">

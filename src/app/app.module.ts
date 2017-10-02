@@ -8,6 +8,7 @@
 //We want our app to work correctly in browser, so we add Angular's browser module in Angular module's import
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
@@ -24,7 +25,8 @@ import { ProductListComponent } from './products/product-list.component';
   //BrowserModule - every browser application must import
   //Browser module register is important to application service providers such as error handling
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   //providers array - defines the services
   providers: [],
