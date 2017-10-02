@@ -71,7 +71,22 @@
                         <td>{{product.productName}}</td>
                         <td>{{product.productCode}}</td>
                         <td>{{product.releaseDate}}</td>
-                        <td>{{product.price}}</td>
+                        <!--
+                            Pipes
+                                Transform bound properties before display
+                                Built-in pipes - date, number, decimal, percent, currency, json, slice, etc
+                                Custom pipes
+                                Examples:
+                                    In Interpolation - {{product.productName | lowercase}}
+                                    In Property binding - <img [src]='product.imageUrl' [title]='product.productName | uppercase'/>
+                                    Concatenate pipes - {{product.price | currency | lowercase}}
+                                    Parameters of pipes - {{product.price | currency:'USD':true:'1.2-2'}}
+                                        Parameters are defined by specifying a colon & parameter value
+                                        Eg. currency pipe have 3 parameters - currency code, boolean value indicating whether to display
+                                            currency symbol & digit info (min no. of integer digits, min no. of fractional digits & max
+                                            no. of fractional digits)
+                        -->
+                        <td>{{product.price | currency:'USD':true:'1.2-2'}}</td>
                         <td>{{product.starRating}}</td>
                     </tr>
                 </tbody>
