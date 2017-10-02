@@ -34,7 +34,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <!--
+                        for..of - iterates over objects, such as an array
+                        for..in - iterates over properties of an object ('in' iterating the 'in'dex)
+                    -->
+                    <tr *ngFor="let product for products">
+                        <td></td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productCode}}</td>
+                        <td>{{product.releaseDate}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.starRating}}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
