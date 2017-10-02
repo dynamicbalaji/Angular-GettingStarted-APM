@@ -10,12 +10,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ProductListComponent } from './products/product-list.component';
 
 @NgModule({
   //For @NgModule decorator, the properties are arrays
   //declarations array - defines which of our components belong to this module
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductListComponent
   ],
   //imports array - defines the external modules that we want to have available to all of the components
   //that belong to this module

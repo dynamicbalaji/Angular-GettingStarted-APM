@@ -9,11 +9,13 @@ import { Component } from '@angular/core';
   //selector defines a directive name. A directive is a custom HTML tag.
   selector: 'pm-root',
   //Template - Start
+  //Inline Template - Single line can be given in double quotes ("") but multiple lines should be given in backtick (``)
   template: `
     <div><h1>{{pageTitle}}</h1>
-        <div>My First Component</div>
+        <pm-products></pm-products>
     </div>
   `//Backtick (Not Quotes)
+  //Linked Template
   //templateUrl: './app.component.html',
   //Template - End
   //styleUrls: ['./app.component.css']
