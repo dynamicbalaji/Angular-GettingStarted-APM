@@ -51,7 +51,8 @@
                         for..of - iterates over objects, such as an array
                         for..in - iterates over properties of an object ('in' iterating the 'in'dex)
                     -->
-                    <tr *ngFor="let product of products">
+                    <!--products is changed to filteredProducts for filtering purpose <tr *ngFor="let product of products">-->
+                    <tr *ngFor="let product of filteredProducts">
                         <td>
                             <!--
                                 Property Binding

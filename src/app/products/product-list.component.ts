@@ -24,11 +24,31 @@ import { IProduct } from "./product";
 */
 
 export class ProductListComponent implements OnInit{
+    
+        //constructor to setup default values of properties
+        constructor(){
+            this.filteredProducts = this.products;
+            this._listFilter = 'cart';
+        }
+
     pageTitle: string = 'Product List';
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
-    listFilter: string = 'cart';
+
+    //listFilter: string = 'cart';
+    //Private variable with getter & setter
+    _listFilter: string;
+    get listFilter(): string {
+        return this._listFilter;
+    }
+    set listFilter(value: string) {
+        this._listFilter = value;
+        this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
+    }
+
+    filteredProducts: IProduct[] = [];
+
     //TypeScript allows 'any' datatype
     //products: any[] = [
     products: IProduct[] = [
@@ -91,5 +111,13 @@ export class ProductListComponent implements OnInit{
     //ngOnInit is a method in OnInit interface that needs to be implemented here
     ngOnInit(): void {
         console.log('In OnInit');
+    }
+
+    //Custom Filter
+    performFilter(filterBy: string): IProduct[]{
+        filterBy = filterBy.toLocaleLowerCase();
+        //ES2015 arrow syntax to define filter function
+        return this.products.filter((product: IProduct) =>
+                                    product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
     }
 }
