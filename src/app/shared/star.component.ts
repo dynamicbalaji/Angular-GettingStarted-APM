@@ -1,4 +1,4 @@
-import {Component, OnChanges} from '@angular/core';
+import {Component, OnChanges, Input} from '@angular/core';
 
 @Component({
     selector:'pm-star',
@@ -7,7 +7,10 @@ import {Component, OnChanges} from '@angular/core';
 })
 
 export class StarComponent implements OnChanges{
-    rating: number = 3;
+    //This will receive input from the place where this component is used in the template
+    //Input decorator is a function so (), it doesn't need any arguments
+    //Data to be passed from Container component to Nested component - @Input PROPERTY
+    @Input() rating: number;
     starWidth: number;
 
     ngOnChanges(): void {

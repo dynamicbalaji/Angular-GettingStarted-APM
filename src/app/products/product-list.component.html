@@ -89,7 +89,11 @@
                         -->
                         <td>{{product.price | currency:'USD':true:'1.2-2'}}</td>
                         <!--<td>{{product.starRating}}</td>-->
-                        <td><pm-star></pm-star></td>
+                        <!--
+                            Nested component pm-star is added here to show stars instead of simply number
+                            Passing values to inputs of nested component is through property binding []
+                        -->
+                        <td><pm-star [rating]='product.starRating'></pm-star></td>
                     </tr>
                 </tbody>
             </table>
