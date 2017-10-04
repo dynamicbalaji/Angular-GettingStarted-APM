@@ -13,6 +13,7 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 import { ConvertToSpacesPipe } from "./shared/convert-to-spaces.pipe";
+import { StarComponent } from "./shared/star.component";
 
 @NgModule({
   //For @NgModule decorator, the properties are arrays
@@ -20,7 +21,8 @@ import { ConvertToSpacesPipe } from "./shared/convert-to-spaces.pipe";
   declarations: [
     AppComponent,
     ProductListComponent,
-    ConvertToSpacesPipe
+    ConvertToSpacesPipe,
+    StarComponent
   ],
   //imports array - defines the external modules that we want to have available to all of the components
   //that belong to this module
