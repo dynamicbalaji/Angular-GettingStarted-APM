@@ -42,6 +42,7 @@ export class ProductListComponent implements OnInit{
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
+    errorMsg: string;
 
     //listFilter: string = 'cart';
     //Private variable with getter & setter
@@ -68,8 +69,20 @@ export class ProductListComponent implements OnInit{
     ngOnInit(): void {
         //console.log('In OnInit');
         //Service method is called in onInit method
-        this.products = this._productService.getProducts();
-        this.filteredProducts = this.products;
+        //Subscribing to an Observable
+        //  x.them(valueFn, errorFn) - This is promise usually
+        //  x.subscribe(valueFn, errorFn) - This is observable
+        //  x.subscribe(valueFn, errorFn, completeFn)
+        //  len sub = x.suscribe(valueFn, errorFn, completeFn) - this option is used when we need to provide
+        //          an option to user to cancel the request
+    this._productService.getProducts()
+                        .subscribe(products => {
+                            this.products = products;
+                            this.filteredProducts = this.products;
+                        },
+                            error => this.errorMsg = <any>error //Casting error to any datatype
+                        );
+        
     }
 
     //Custom Filter

@@ -8,7 +8,10 @@
 //We want our app to work correctly in browser, so we add Angular's browser module in Angular module's import
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+//for ngModel
 import { FormsModule } from "@angular/forms";
+//for http service calls
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
@@ -17,7 +20,7 @@ import { StarComponent } from "./shared/star.component";
 
 @NgModule({
   //For @NgModule decorator, the properties are arrays
-  //declarations array - defines which of our components belong to this module
+  //declarations array - defines which of our components/pipes belong to this module
   declarations: [
     AppComponent,
     ProductListComponent,
@@ -30,7 +33,8 @@ import { StarComponent } from "./shared/star.component";
   //Browser module register is important to application service providers such as error handling
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   //providers array - defines the services
   providers: [],
