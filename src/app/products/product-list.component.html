@@ -92,8 +92,15 @@
                         <!--
                             Nested component pm-star is added here to show stars instead of simply number
                             Passing values to inputs of nested component is through property binding []
+
+                            We want to listen to the ratingClicked event raised by nested component
+                            If event is raised we need to define a method in productlist component to process the event
+                            String is passed from nested component for this event, so we are passing it to the 
+                                onRatingClicked method as $event
+                            $event passes any information associated with a generated event
                         -->
-                        <td><pm-star [rating]='product.starRating'></pm-star></td>
+                        <td><pm-star [rating]='product.starRating'
+                                    (ratingClicked)='onRatingClicked($event)'></pm-star></td>
                     </tr>
                 </tbody>
             </table>
