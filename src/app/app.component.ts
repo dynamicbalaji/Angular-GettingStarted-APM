@@ -2,6 +2,8 @@
 import { Component } from '@angular/core';
 //Eg. @angular/core, @angular/animate, @angular/http, @angular/router
 
+import { ProductService } from './products/product.service';
+
 //Metadata - Start
 //A class becomes a component when we define a metadata
 //Decorator - A function that adds metadata to a class, its members or its arguments. Prefixed with @. Eg.@Component()
@@ -22,11 +24,12 @@ import { Component } from '@angular/core';
     <div><h1>{{pageTitle}}</h1>
         <pm-products></pm-products>
     </div>
-  `//Backtick (Not Quotes)
+  `,//Backtick (Not Quotes)
   //Linked Template
   //templateUrl: './app.component.html',
   //Template - End
   //styleUrls: ['./app.component.css']
+  providers: [ProductService]
 })
 //Notice there is no semicolon here after ).
 //Metadata - End
