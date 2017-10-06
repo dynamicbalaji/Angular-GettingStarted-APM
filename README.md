@@ -36,3 +36,5 @@ Check comments in below files
 - product-list.component.html to understand *ngFor,  property binding, event binding & two-way binding
 - product-list.component.ts to understand how to improve components
 - product.ts to understand interface & class
+
+ng build --prod --base-href /Angular-GettingStarted-APM --deploy-url https://dynamicbalaji.github.io/Angular-GettingStarted-APM/

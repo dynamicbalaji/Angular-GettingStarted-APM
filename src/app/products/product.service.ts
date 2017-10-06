@@ -28,7 +28,7 @@ import { IProduct } from './product';
 @Injectable()
 export class ProductService {
     //As there is no service application available, we are using a json as an input here
-    private _productUrl = './api/products/products.json';
+    private _productUrl = '../../api/products/products.json';
 
     constructor(private _http: HttpClient){
 
