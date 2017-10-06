@@ -1,0 +1,15 @@
+<div class="panel panel-primary" *ngIf='product'>
+  <div class="panel-heading">
+    <!--
+      product?.productName
+      that "?"" here is called 'safe navigation operator' which guards against null & undefined values when
+        navigating an object's properties
+        If the product object is null or undefined, the safe navigation operator simply returns null and
+          does not attempt to access the product name. Hence we don't see an undefined property error.
+      safe navigation operator is great, but not always the best option. 
+        For eg, it does not work with ngModel two-way binding.its quiet tedious when we display many properties
+      Hence, we are going to use ngIf
+    -->
+    {{pageTitle + ":" + product.productName}}
+  </div>
+</div>

@@ -17,6 +17,8 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 import { ConvertToSpacesPipe } from "./shared/convert-to-spaces.pipe";
 import { StarComponent } from "./shared/star.component";
+import { ProductDetailComponent } from './products/product-detail.component';
+import { WelcomeComponent } from './home/welcome.component';
 
 @NgModule({
   //For @NgModule decorator, the properties are arrays
@@ -25,7 +27,9 @@ import { StarComponent } from "./shared/star.component";
     AppComponent,
     ProductListComponent,
     ConvertToSpacesPipe,
-    StarComponent
+    StarComponent,
+    ProductDetailComponent,
+    WelcomeComponent
   ],
   //imports array - defines the external modules that we want to have available to all of the components
   //that belong to this module
