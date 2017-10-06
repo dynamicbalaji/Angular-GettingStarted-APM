@@ -3,7 +3,7 @@ import { IProduct } from "./product";
 import { ProductService } from "./product.service";
 
 @Component({
-    selector: 'pm-products',
+    //selector: 'pm-products',
     templateUrl: './product-list.component.html',
     //Encapsulating component styles - Start
     //Both styles & styleUrls properties are array, so we can add multiple seperated by commas

@@ -12,6 +12,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 //for http service calls
 import { HttpClientModule } from "@angular/common/http";
+//for routing - registers router service, declares router directives, exposes configured routes (forRoot())
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
@@ -38,7 +40,21 @@ import { WelcomeComponent } from './home/welcome.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    /*Angular supports HTML5 style urls eg. localhost:4200/products which doesn't require # to indicate
+        local navigation. If we use this, then we need definer url rewriting in our web server.
+      Angular supports non-HTML5 style urls also eg. localhost:4200/#/products which doesn't require any
+        url rewriting in the web server. To enable this in angular routing, we need to add 'useHash: true'
+        property in forRoot() method of RouterModule as given below
+    */
+    RouterModule.forRoot([
+      { path: 'products', component: ProductListComponent },
+      { path: 'products/:id', component: ProductDetailComponent },
+      { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo:'welcome', pathMatch:'full' },
+      { path: '**', redirectTo:'welcome', pathMatch:'full' } //Usually we will use this for 404
+    ]//, {useHash: true}
+    )
   ],
   //providers array - defines the services
   providers: [],
