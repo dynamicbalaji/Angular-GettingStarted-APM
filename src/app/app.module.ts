@@ -9,17 +9,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 //for ngModel
-import { FormsModule } from "@angular/forms";
+//import { FormsModule } from "@angular/forms";
 //for http service calls
 import { HttpClientModule } from "@angular/common/http";
 //for routing - registers router service, declares router directives, exposes configured routes (forRoot())
 import { RouterModule } from '@angular/router';
 
+import { ProductModule } from "./products/product.module";
+
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './products/product-list.component';
-import { ConvertToSpacesPipe } from "./shared/convert-to-spaces.pipe";
-import { StarComponent } from "./shared/star.component";
-import { ProductDetailComponent } from './products/product-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductGuardService } from './products/product-guard.service';
 
@@ -28,10 +26,6 @@ import { ProductGuardService } from './products/product-guard.service';
   //declarations array - defines which of our components/pipes belong to this module
   declarations: [
     AppComponent,
-    ProductListComponent,
-    ConvertToSpacesPipe,
-    StarComponent,
-    ProductDetailComponent,
     WelcomeComponent
   ],
   //imports array - defines the external modules that we want to have available to all of the components
@@ -40,7 +34,6 @@ import { ProductGuardService } from './products/product-guard.service';
   //Browser module register is important to application service providers such as error handling
   imports: [
     BrowserModule,
-    FormsModule,
     HttpClientModule,
     /*Angular supports HTML5 style urls eg. localhost:4200/products which doesn't require # to indicate
         local navigation. If we use this, then we need definer url rewriting in our web server.
@@ -49,18 +42,15 @@ import { ProductGuardService } from './products/product-guard.service';
         property in forRoot() method of RouterModule as given below
     */
     RouterModule.forRoot([
-      { path: 'products', component: ProductListComponent },
-      { path: 'products/:id', 
-        canActivate: [ProductGuardService],
-        component: ProductDetailComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo:'welcome', pathMatch:'full' },
       { path: '**', redirectTo:'welcome', pathMatch:'full' } //Usually we will use this for 404
     ]//, {useHash: true}
-    )
+    ),
+    ProductModule
   ],
   //providers array - defines the services
-  providers: [ProductGuardService],
+  //providers: [ProductGuardService],
   //bootstrap array - defines the startup component of the application
   //Startup component should have the selector (eg. pm-root) that we use in index.html file
   bootstrap: [AppComponent]

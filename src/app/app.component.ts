@@ -38,12 +38,12 @@ import { ProductService } from './products/product.service';
         <router-outlet></router-outlet>
       </div>
     </div>
-  `,//Backtick (Not Quotes)
+  `//,//Backtick (Not Quotes)
   //Linked Template
   //templateUrl: './app.component.html',
   //Template - End
   //styleUrls: ['./app.component.css']
-  providers: [ProductService]
+  //providers: [ProductService]
 })
 //Notice there is no semicolon here after ).
 //Metadata - End
